@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<html lang="zh-CN">
+<head>
+    <title>登录页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'blog/bootstrap3.3.7/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'blog/bootstrap3.3.7/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'blog/base.css' %}">
+    <link rel="stylesheet" href="{% static '/blog/css/font-awesome.min.css' %}">
+</head>
+
+<body style="background-color: #29a8d8!important;">
+<div class="container">
+    <div class="row">
+        <div class="md">
+            <form class="form-horizontal" method="POST">
+                <span class="heading">用户登录</span>
+                    <div class="form-group">
+                        <i class="{{ field.label }}"></i>
+                        <p class="text-danger">{{ field.errors.as_text }}</p>
+                    </div>
+                <span class="pull-left text-danger">{{ login_form.non_field_errors }}</span>
+                <button type="submit" class="btn-default">登录</button>
+            </form>
+            <div class="form-horizontal_register">
+                还没有账号？<a href="{% url 'register' %}"><button type="submit" class="btn-danger">注册</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
